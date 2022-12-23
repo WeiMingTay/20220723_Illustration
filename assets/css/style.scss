@@ -1,0 +1,316 @@
+// Variablen
+$textColour: #202020;
+$backgroundColour: #fff;
+$buttonColour: #24bff2;
+$Farbe: #f5fbfe;
+
+$colourFB: #3b5998;
+$colourIG: #fcaf45;
+$colourTw: #55acee;
+$colourYt: #c4302b;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap");
+/* font-family: 'Lato', sans-serif;
+font-family: 'Merriweather', serif; */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Merriweather", serif;
+	font-size: 62.5%;
+}
+
+/* ===============
+HEADER
+=============== */
+/* ----- NAVIGATION ----- */
+header {
+	position: fixed;
+	right: 1rem;
+	top: 1rem;
+	background: $backgroundColour;
+	border-radius: 5px;
+	opacity: 0.9;
+	color: $textColour;
+
+	li {
+		display: inline;
+		padding-left: 1.6vw;
+	}
+	a {
+		font-family: "Lato", sans-serif;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: inherit;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+/* ===============
+MAIN
+=============== */
+h1,
+h2,
+h3 {
+	font-size: 5em;
+	font-weight: 400;
+	text-transform: lowercase;
+}
+main p {
+	font-size: 2em;
+	font-weight: 300;
+	margin: 20px auto;
+	line-height: 180%;
+}
+
+.zentriert {
+	text-align: center;
+	margin-left: 20vw;
+	margin-right: 20vw;
+	width: 60vw;
+}
+/* ----- Section01 / Buttons / lightbulb GIF ----- */
+main section:nth-of-type(1) {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 6vh;
+
+	> div {
+		width: 50%;
+		padding: 0 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/* -- Buttons -- */
+	.buttonSection01 {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: row;
+		width: 100%;
+		gap: 1rem;
+
+		button {
+			padding: 0.5rem 2rem;
+			cursor: pointer;
+
+			border: none;
+			border-radius: 5px;
+			/* Warum andere Schriftart??? */
+			font-family: "Merriweather", serif;
+			box-shadow: 0 0 10px 1px rgba($textColour, 0.25);
+			transition: all 250ms;
+
+			&:first-of-type {
+				background-color: $textColour;
+				color: $backgroundColour;
+				&:hover {
+					background-color: $backgroundColour;
+					color: $textColour;
+					scale: 1.1;
+				}
+			}
+			&:last-of-type {
+				background-color: $backgroundColour;
+				color: $textColour;
+				&:hover {
+					background-color: $textColour;
+					color: $backgroundColour;
+					scale: 1.1;
+				}
+			}
+		}
+	}
+	img {
+		width: 100%;
+		max-width: 30vw;
+	}
+}
+/* ----- Section02 / BIld links/rechts ----- */
+/* --- Article01 / Bild links --- */
+main section:nth-of-type(2) {
+	article {
+		display: flex;
+		justify-content: space-around;
+		/* flex-wrap: wrap; */
+		margin-top: 20vh;
+
+		div {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 0 1rem;
+		}
+		img {
+			width: 30vw;
+		}
+	}
+}
+/* ----- Section03 / Drei Bilder/ Applications----- */
+main section:nth-of-type(3) {
+	h2 {
+		margin-top: 10vh;
+	}
+	> div {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin-top: 5vh;
+
+		> div {
+			overflow: hidden;
+			width: 100%;
+
+			img {
+				width: 100%;
+				transition: all 500ms;
+				&:hover {
+					scale: 1.5;
+					rotate: 5deg;
+				}
+			}
+		}
+	}
+}
+
+/* ----- Section04 / Gallery / Examples ----- */
+main section:nth-of-type(4) {
+	h2 {
+		margin-top: 10vh;
+	}
+	div {
+		margin-top: 5vh;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+	img {
+		width: 35vw;
+
+		&:hover {
+			box-shadow: 0 0 5px 3px lightgray;
+		}
+	}
+}
+/* ----- Section05 / Membership ----- */
+main section:nth-of-type(5) {
+	h2 {
+		margin-top: 10vh;
+	}
+	/* --- Liste --- */
+	#membership {
+		background-color: $Farbe;
+		display: table;
+		
+		text-align: center;
+		font-size: 1.3rem;
+		line-height: 150%;
+		margin: 0 auto;
+		margin-bottom: 5vh;
+		padding: 1rem 2rem;
+
+		h4 {
+			font-size: 1.1em;
+			margin: 1rem auto;
+		}
+		h5 {
+			font-size: 2.5em;
+			font-weight: 600;
+			margin: 1rem auto;
+		}
+		h6 {
+			font-size: 1em;
+			font-weight: 500;
+			color: rgba($textColour, .5);
+			margin: 1rem auto;
+		}
+		ul {
+			margin-bottom: 1rem;
+			list-style: none;
+			font-size: 0.8rem;
+		}
+	}
+	/* --- Link --- */
+	a {
+		background-color: $buttonColour;
+		color: $backgroundColour;
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		text-decoration: none;
+		font-size: 0.9em;
+	}
+}
+/* ===============
+FOOTER
+=============== */
+footer {
+	text-align: center;
+
+	a {
+		text-decoration: none;
+		color: $textColour;
+	}
+	/* ----- Links/ Social Media ----- */
+	div {
+		font-size: 1.2rem;
+		margin: 1.25rem auto;
+
+		p {
+			color: rgb(184, 184, 184);
+			font-size: 1.2rem;
+		}
+		&:nth-of-type(1) {
+			margin-top: 4vh;
+
+			p {
+				margin-bottom: 2vh;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&:nth-of-type(2) {
+			a {
+				letter-spacing: 1px;
+			}
+			span {
+				font-size: 40px;
+			}
+		}
+	}
+	.fb {
+		color: $colourFB;
+	}
+	.ig {
+		color: $colourIG;
+	}
+	.tw {
+		color: $colourTw;
+	}
+	.yt {
+		color: $colourYt;
+	}
+
+	/* --- Pfeil --- */
+	#Pfeil {
+		position: fixed;
+		left: 30px;
+		bottom: 30px;
+		opacity: 0.9;
+	}
+	#Pfeil img {
+		border-radius: 25px;
+	}
+}
